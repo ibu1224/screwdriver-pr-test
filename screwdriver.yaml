@@ -14,9 +14,8 @@ jobs:
     requires: [ ~pr, ~pr:/^.*$/ ]
     steps:
        - echo "foo"
-
   detached:
-    requires: [ ~pr, ~pr:/^.*$/ ]
+    requires: []
     steps:
        - echo "foo"
  
