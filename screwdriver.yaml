@@ -1,0 +1,22 @@
+shared:
+  image: node:18
+
+jobs:
+  A:
+    requires: [ ~pr ]
+    steps:
+       - echo "foo"
+  B:
+    requires: [ ~pr, ~detached ]
+    steps:
+       - echo "foo"
+  C:
+    requires: [ ~pr, ~pr:/^.*$/ ]
+    steps:
+       - echo "foo"
+
+  detached:
+    requires: [ ~pr, ~pr:/^.*$/ ]
+    steps:
+       - echo "foo"
+ 
